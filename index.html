@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="addToggle()">
+    <div class="fluid">
+        <div class="allContainer">
+            <nav>
+
+
+            </nav>
+            <main>
+                <div class="order_sum">
+                    <div class="items" id="items"></div>
+                    <div class="topay">
+                        <div class="amout_to_pay">sum = <span id="span_sum">0</span></div>
+                        <div class="num_of_items" >total items- <span id="total_items_span">0</span></div>
+                    </div>
+                </div>
+                <div class="dynamic_menue" id="dynamic_menue">
+                    
+                    <!----------- hot beverages menue -------------------------------- -->
+                    
+                    <div class="hot_beverages_menue hide_menue">
+                        <div class="hot_beverages_container menue_items_container">
+                        <div class="hot_item menue_item capuchino" id="capuchino">capuchino</div>
+                        <div class="hot_item menue_item americano" id="americano">americano</div>
+                        <div class="hot_item menue_item espreso" id="espreso">espreso</div>
+                    </div>
+                    </div>
+                    
+                   <!---------------- juice menue ------------------------------------ -->
+                    
+                   <div class="juice_menue hide_menue" id="juice_menue">
+                        <h3 class="fresh_header">fresh drinks</h3>
+                        <div class="fresh_drinks">
+                            <div class="juice_item menue_item fresh fresh_orange" id="fresh_orange_juice">fresh orange juice</div>
+                            <div class="juice_item menue_item fresh fresh_apple" id="fresh_apple_juice">fresh apple juice</div>
+                            <div class="juice_item menue_item fresh fresh_pomegranate" id="fresh_pomegranate_juice">fresh pomegranate juice</div>
+                        </div>
+                   </div>
+
+                   <!---------------- slushi & ice cream menue ------------------------ -->
+
+                   <div class="iced_menue hide_menue" id="iced_menue">
+                        <div class="iced_container menue_items_container">
+                         <div class="iced_item menue_item slushy_iced_coffe" id="slushy_iced_coffe">slushy iced coffe</div>
+                         <div class="iced_item menue_item slushy_diet_iced_coffe" id="slushy_diet_iced_coffe">slushy diet iced coffe</div>
+                         <div class="iced_item menue_item slushy_iced_cohocolate" id="slushy_iced_cohocolate">slushy iced cohocolate</div>
+                        </div>
+                    </div>
+
+                   <!---------------- item instructions ------------------------ -->
+
+                    <div class="item_instructions hide_menue">
+                        <div class="delete_item menue_item">delete item</div>
+                    </div>
+
+                </div>
+                <div class="main_menue" id="main_menue">
+                    <div class="1 main_menue_box main_hot_beverages_box" id="main_hot_beverages_box">hot beverages</div>
+                    <div class="2 main_menue_box main_juice_box" id="main_juice_box">juice</div>
+                    <div class="3 main_menue_box main_iced_box" id="main_iced_box">iced & slushy</div>
+                </div>
+            </main>
+            <footer>
+
+
+            </footer>
+        </div>
+    </div>
+</body>
+<link rel="stylesheet" href="cash register.css">
+<script src="cash register.js"></script>
+
+</html>

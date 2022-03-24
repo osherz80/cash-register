@@ -1,0 +1,226 @@
+*{
+    box-sizing: border-box;
+}
+
+body , html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+ 
+::-webkit-scrollbar {
+    height: 7px;
+    width: 11px;
+    position: relative;
+    bottom: 20px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #d3d3d3;
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+a{
+    text-decoration: none;
+}
+
+.fluid{
+    width: 100%;
+    height: 100%;
+    background: gainsboro;
+}
+
+.allContainer{
+    width: 100%;
+    height: 100%;
+    background: gainsboro;
+}
+
+/******   nav section   ******/
+
+nav{
+    width: 100%;
+    height: 8%;
+    background: tomato;
+}
+
+/******   main section   ******/
+
+main{
+    width: 100%;
+    height: 80%;
+    background: grey;
+    display: flex;
+}
+
+.hide_menue{
+    display: none !important;
+}
+
+.main_menue{
+    width: 10%;
+    background: brown;
+}
+
+.main_menue_box{
+    width: 65%;
+    height: 2.5em;
+    background: chocolate;
+    margin: 10% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main_menue_box:focus{
+    transform: scale(1.1);
+    border-bottom: 1px solid red;
+}
+
+.main_menue .main_menue_box:first-of-type{
+    margin-top: 20%;
+}
+
+.dynamic_menue{
+    width: 65%;
+    height: 100%;
+    background: white;
+}
+
+.hot_beverages_menue{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+.menue_items_container{
+    width: fit-content;
+    max-width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+    background: goldenrod;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: flex-end;
+}
+
+.menue_item{
+    margin: 7px;
+}
+
+.juice_menue{
+    width: 100%;
+    height: 100%;
+    background: rgb(223, 223, 47);
+}
+
+
+.fresh_drinks{
+    min-height: 40%;
+    background: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fresh_header{
+    margin: 0 auto;
+    width: fit-content;
+    padding: 2% 0;
+}
+
+.menue_item{
+    width: 100px;
+    height: 50px;
+    background: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80%;
+}
+
+.order_sum{
+    background: rgb(92, 90, 90);
+    width: 25%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.items{
+    width: 90%;
+    height: 75%;
+    background: white;
+    margin: 2% auto;
+    margin-bottom: 0;
+    overflow-y: auto;
+    
+}
+
+.sum_item{
+    display: flex;
+    align-items: center;
+    height: 2.5em;
+    border-top: 2px red solid;
+}
+
+.sum_item:first-child{
+    border: none;
+}
+
+.sum_item_property{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sum_item_property:first-child{
+    width: 60%;
+    padding-left: 2%;
+}
+
+.sum_item_property:nth-child(2){
+    width: 25%;
+}
+
+.sum_item_property:last-child{
+    width: 15%;
+    justify-content: center;
+}
+
+.topay{
+    width: 90%;
+    height: 15%;
+    background: white;
+    margin: 0 auto;
+    border-top: 1px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/******   footer section   ******/
+
+footer{
+    height: 12%;
+    width: 100%;
+    background: black;
+}
