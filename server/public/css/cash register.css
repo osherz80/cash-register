@@ -1,0 +1,819 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 4px;
+    position: relative;
+    bottom: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d3d3d3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.hide {
+    display: none !important;
+}
+
+.fluid {
+    width: 100%;
+    height: 100%;
+    background: gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg_holder {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://previews.123rf.com/images/maxmega/maxmega1703/maxmega170300006/74222554-fast-food-texture-background.jpg");
+
+}
+
+.all_container {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+}
+
+.light_box {
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 41, 41, 0.662);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin_light_box {
+    align-items: flex-start;
+}
+
+.system_btn {
+    background-color: #a52a2a;
+    ;
+    border: 0;
+    box-shadow: rgb(1 60 136 / 50%) 0 -1px 3px 0 inset, rgb(0 44 97 / 10%) 0 3px 6px 0;
+    color: #fff;
+    font-family: "Space Grotesk", -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 700;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.system_btn:hover {
+    background-color: #582323;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.general_input {
+    padding: 5px;
+    font-size: 20px;
+    border-width: 3px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .40);
+}
+
+.general_input:focus {
+    outline: none;
+}
+
+/*****  admin sector   ******/
+
+.admin_Button {
+    box-shadow: inset 0px 0px 15px 3px #23395e;
+    background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+    background-color: #2e466e;
+    border-radius: 17px;
+    border: 1px solid #1f2f47;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 6px 13px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #263666;
+}
+
+.admin_Button:hover {
+    background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+    background-color: #415989;
+}
+
+.admin_Button:active {
+    position: relative;
+    top: 1px;
+}
+
+.secondary_container {
+    width: 600px;
+    height: 250px;
+    background: white;
+    margin-top: 6rem;
+}
+
+.secondary_container select {
+    height: 30px;
+    font-weight: 600;
+    background: #334a74;
+    color: #fffbf3;
+    border-radius: 5px;
+}
+
+.admin_header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8px;
+}
+
+.logout_btn_container {
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.admin_menues_section {
+    height: 80%;
+    width: 100%;
+}
+
+.login_block {
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login_info_container {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admin_email,
+.admin_password {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.admin_menue,
+.add_extra_block,
+.add_item_block,
+.add_admin_block,
+.delete_admin_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.admin_menue {
+    justify-content: space-evenly;
+}
+
+.manage_menue_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.menues_manage_btns_div,
+.items_manage_btns_div,
+.extras_manage_btns_div {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.add_menue_block {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.add_menue_block input {
+    margin: 5px;
+}
+
+.add_menue_type_div {
+    margin: 5px;
+}
+
+.add_menue_btns_div {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.delete_menue_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.delete_item_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.add_item_btns_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.add_extra_btns_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete_extra_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.manage_admins_block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.get_records_block {
+    width: 100%;
+    height: 100%;
+}
+
+.records_block_header {
+    width: 100%;
+    height: fit-content;
+}
+
+.search_by_block{
+    display: flex;
+    align-items: center;
+}
+
+.search_input_div{
+    margin-left: 2rem;
+}
+
+.search_records_btn{
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.to_date_search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recieved_records_container {
+    width: 100%;
+    height: 300%;
+    background: white;
+    overflow: auto;
+}
+
+.recieved_records_container:first-child {
+    border-top: none;
+}
+
+.record_holder {
+    border-top: 2px solid rebeccapurple
+}
+
+/******   nav section   ******/
+
+nav {
+    width: 100%;
+    height: 8%;
+    display: flex;
+}
+
+.customer_add_name_div {
+    width: 500px;
+    height: 200px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.customer_label {
+    font-size: 1.5em;
+    margin: 0 30% 10px 0px;
+}
+
+.add_name_btn {
+    height: 40px;
+    width: 50px;
+    margin-left: 8px;
+    border-radius: 7px;
+}
+
+.customer_name_div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 1.3%;
+}
+
+.customer_name_btn {
+    width: fit-content;
+    height: 55%;
+}
+
+.customer_name_container {
+    height: 55%;
+    min-width: 130px;
+    max-width: 250px;
+    width: fit-content;
+    border: 1px solid #cfc3ae;
+    margin-left: 1.2%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: white;
+    font-size: 15px;
+}
+
+.admin_entrance_btn {
+    width: 11.07%;
+}
+
+
+/******   main section   ******/
+
+main {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.main_menue {
+    width: 10%;
+    height: 100%;
+    background: brown;
+    overflow-y: auto;
+}
+
+.main_menue_box {
+    width: 65%;
+    height: 2.5em;
+    background: #3c3737;
+    color: wheat;
+    margin: 10% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .5s;
+    border-radius: 3px;
+}
+
+.main_menue .main_menue_box:first-of-type {
+    margin-top: 20%;
+}
+
+.main_menue_box:hover {
+    cursor: pointer;
+}
+
+.dynamic_menue {
+    width: 65%;
+    height: 100%;
+    background-image: url("https://previews.123rf.com/images/maxmega/maxmega1703/maxmega170300006/74222554-fast-food-texture-background.jpg");
+    background-position: center;
+    background-size: contain;
+}
+
+.items_menue {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    overflow-y: auto;
+    background-image: url("https://previews.123rf.com/images/maxmega/maxmega1703/maxmega170300006/74222554-fast-food-texture-background.jpg");
+    background-position: center;
+    background-size: contain;
+}
+
+.menue_items_container {
+    width: fit-content;
+    max-width: 75%;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.menue_item {
+    width: 120px;
+    height: 60px;
+    color: #3c3737;
+    background: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 80%;
+    margin: 7px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all .2s;
+    border-radius: 3px;
+}
+
+.menue_item:hover {
+    transform: scale(1.05);
+    box-shadow: rgb(0 0 0 / 60%) 0px 10px 15px;
+    cursor: pointer;
+}
+
+.extras_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding: 0 10% 0 5%;
+}
+
+.item_instructions_menue {
+    flex-direction: column;
+}
+
+.add_comment_btn,
+.change_comment_light_box button {
+    margin-right: 10px;
+    height: 40px;
+    border-radius: 10px;
+    width: fit-content;
+    color: #3c3737;
+    background: wheat;
+}
+
+.change_comment_light_box button {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.add_comment_btn:hover,
+.change_comment_light_box button:hover {
+    background-color: #beab87;
+}
+
+.item_comments_input {
+    width: 400px;
+}
+
+.change_comment_light_box {
+    width: 65%;
+    height: 100%;
+    background: rgba(45, 41, 41, 0.662);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.order_sum {
+    width: 25%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.items {
+    width: 90%;
+    height: 85%;
+    background: white;
+    margin: 0 auto;
+    overflow-y: auto;
+    border: 2px solid #cfc3ae;
+    border-bottom: none;
+}
+
+.sum_item {
+    display: flex;
+    align-items: center;
+    min-height: 2.5em;
+    flex-wrap: wrap;
+    font-weight: bold;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #8a7296c9, #dcdcdc7d) 1;
+}
+
+.sum_item:first-child {
+    border: none;
+}
+
+.sum_item_property {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sum_item_name {
+    width: 60%;
+    padding-left: 2%;
+}
+
+.sum_item_price {
+    width: 25%;
+}
+
+.sum_item_amount {
+    width: 15%;
+    justify-content: center;
+}
+
+.sum_item_details {
+    width: 100%;
+    background: #ceabb2;
+    padding-left: 4%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.topay {
+    width: 90%;
+    height: 15%;
+    background: white;
+    margin: 0 auto;
+    border-top: 1px black solid !important;
+    border: 2px solid #cfc3ae;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.amout_to_pay,
+.num_of_items {
+    font-size: 1.3em;
+}
+
+/******   footer section   ******/
+
+footer {
+    height: 12%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirm_order_btn,
+.delete_order_btn {
+    margin: 15px 0 0 23px;
+    height: 50%;
+}
+
+.general_item_btn_div {
+    height: 100%;
+    width: 10%;
+    background: #562929;
+    margin-left: auto;
+}
+
+.general_item_btn {
+    height: 100%;
+    width: 100%;
+    ;
+    box-shadow: rgb(1 60 136 / 50%) 0 1px 3px 0 inset, rgb(0 44 97 / 10%) 0 3px 6px 0;
+}
+
+.general_item_menue {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.general_item_menue input {
+    margin-bottom: 15px;
+}
+
+.add_general_item_btn {
+    height: 35px;
+    border-radius: 5px;
+}
+
+.general_item_name {
+    width: 60%;
+    padding-left: 2%;
+}
+
+.general_item_price {
+    width: 25%;
+}
+
+.general_item_amount {
+    width: 15%;
+    justify-content: center;
+}
+
+.general_item_details {
+    width: 100%;
+    background: #ceabb2;
+    padding-left: 4%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.finish_order_div {
+    width: 600px;
+    height: 250px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.close_payment_window_btn {
+    width: 55px;
+    height: 30px;
+}
+
+.finish_order_div_header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.payment_btns_container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pay_with_cash_menue_btn,
+.pay_cash_btn {
+    background: #2C2E2F;
+    width: 100%;
+    height: 22%;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: -2px;
+    line-height: 22px;
+    margin-bottom: 4%;
+}
+
+.pay_with_cash_menue_btn:hover,
+.pay_cash_btn:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.cash_payment_div {
+    width: 100%;
+    height: 100%;
+}
+
+.cash_payment_header {
+    display: flex;
+    justify-content: space-around;
+    height: 30%;
+    align-items: center;
+}
+
+.currency_convertion_btn {
+    width: 50px;
+    height: 25px;
+}
+
+
+.cash_payment_footer {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cash_input_div {
+    margin-bottom: 40px;
+}
+
+.pay_cash_btn {
+    width: 40%;
+}
+
+.pay_cash_btn:hover {
+    background-color: #2C2E2F;
+}
+
+.cash_sum_div {
+    display: flex;
+}
+
+.cash_received_info_div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recived_cash_label {
+    font-size: 20px;
+}
+
+.delete_order_div {
+    width: 600px;
+    height: 250px;
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.delete_order_btns_container {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirm_delete_btn {
+    font-size: 25px;
+    width: 80px;
+    border-radius: 5px;
+}

@@ -1,0 +1,179 @@
+<div class="admin_light_box light_box hide" id="admin_light_box">
+    <div class="secondary_container hide" id="secondary_container">
+        <div class="admin_header">
+            <button class="exit_admin_menue_btn admin_Button" onclick="goBackBack()">exit admin menue</button>
+            <div class="logout_btn_container"></div>
+            <label class="me-2">Admin username:</label>
+            <div class="admin_user_name" id="admin_user_name"></div>
+        </div>
+        <div class="admin_menues_section">
+            <div class="login_block hide" id="login_block">
+                <div class="login_info_container" id="login_info_container">
+                    <div class="admin_email">
+                        <label>email</label> <input class="login_email_input general_input" id="login_email_input"
+                            type="email" placeholder="email">
+                    </div>
+                    <div class="admin_password">
+                        <label>password</label><input class="login_password_input general_input"
+                            id="login_password_input" type="text" placeholder="password">
+                    </div>
+                </div>
+                <button class="admin_Button" onclick="checkLogin()">login</button>
+
+            </div>
+            <div class="admin_menue hide" id="admin_menue">
+                <button class="admin_Button" id="admin_menues_Button" onclick="toggleManageMenues()">manage
+                    menues</button>
+                <button class="admin_Button" id="admin_admins_Button" onclick="toggleManageAdmins()">manage
+                    admins</button>
+                <button class="admin_Button" id="admin_records_Button" onclick="toggleGetRecords()">get
+                    records</button>
+            </div>
+
+            <!-- get records section -->
+
+            <div class="get_records_block hide">
+                <div class="records_block_header">
+                    <div class="search_by_block">
+                        <label>search by:</label>
+                        <select id="" class="search_records_select" onchange="changeSearcInputType()">
+                            <option class="name_option" value="name">Name</option>
+                            <option class="date_option" value="date">date</option>
+                            <option class="date_option" value="cost">cost</option>
+                        </select>
+                        <div class="search_input_div">
+                            <label class="search_record_label">value:</label>
+                            <input class="value_to_search_input general_input" type="text"
+                                placeholder="value to search">
+                        </div>
+                        <button class="search_records_btn admin_Button" onclick="searchRecord(/*0*/)">search</button>
+                    </div>
+                    <div class="to_date_search hide">
+                        <div class="second_search_input_div">
+                            <label>to date:</label>
+                            <input class="to_date_input general_input" type="date">
+                        </div>
+                    </div>
+                </div>
+                <div class="recieved_records_container">
+
+                </div>
+            </div>
+
+            <!-- manage menues section -->
+
+            <div class="manage_menue_block hide" id="manage_menue_block">
+                <div class="menues_manage_btns_div">
+                    <button class="add_menue admin_Button" id="add_menue" onclick="toggleAddMenue()">add menue</button>
+                    <button class="delete_menue admin_Button" id="delete_menue" onclick="toggleDeleteMenue()">delete
+                        menue</button>
+                </div>
+                <div class="items_manage_btns_div">
+                    <button class="add_item admin_Button" id="add_item" onclick="toggleAddItem()">add item</button>
+                    <button class="delete_item admin_Button" id="delete_item" onclick="toggleDeleteItem()">delete
+                        item</button>
+                </div>
+                <div class="extras_manage_btns_div">
+                    <button class="add_extra admin_Button" id="add_extra" onclick="toggleAddExtraBlock()">add
+                        extra</button>
+                    <button class="delete_extra admin_Button" id="delete_extra" onclick="toggleDeleExtraBlock()">delete
+                        extra</button>
+                </div>
+                <div class="admin_esc_button_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                </div>
+            </div>
+            <div class="add_menue_block hide" id="add_menue_block">
+                <input id="menue_name_input" class="menue_name_input general_input" type="text" placeholder="menue name"
+                    required>
+                <div class="add_menue_type_div">
+                    <label>menue type:</label>
+                    <label>food</label><input type="radio" name="menueType" id="" value="food">
+                    <label>drink</label><input type="radio" name="menueType" id="" value="drink">
+                </div>
+                <input id="new_menue_item_name_input" class="new_menue_item_name_input general_input" type="text"
+                    placeholder="menue first item name">
+                <input id="new_menue_item_price_input" class="new_menue_item_price_input general_input" type="number"
+                    placeholder="menue first item price">
+                <div class="add_menue_btns_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                    <button class="admin_Button" onclick="addMenue()">add menue</button>
+                </div>
+            </div>
+            <div class="delete_menue_block hide" id="delete_menue_block">
+                <div class="admin_esc_button_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                </div>
+                <select id="select_menue_to_delete"></select>
+                <button class="admin_Button" onclick="deleteMenue()">delete menue</button>
+            </div>
+            <div class="add_item_block hide" id="add_item_block">
+                <input id="item_name_input" class="item_name_input general_input" type="text" placeholder="item name">
+                <input id="item_price_input" class="item_price_input general_input" type="number"
+                    placeholder="item price">
+                <select id="select_menue_to_update"></select>
+                <div class="add_item_btns_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                    <button class="admin_Button" onclick="addNewItemToMenue()">add item</button>
+                </div>
+            </div>
+            <div class="delete_item_block hide" id="delete_item_block">
+                <div class="admin_esc_button_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                </div>
+                <select id="select_menue_to_delete_item"></select>
+                <select id="select_item_to_delete"></select>
+                <button class="admin_Button" onclick="deleteItemFromMenue()">delete item</button>
+            </div>
+            <div class="add_extra_block hide" id="add_extra_block">
+                <input id="extra_name_input" class="extra_name_input general_input" type="text"
+                    placeholder="extra name">
+                <input id="extra_price_input" class="extra_price_input general_input" type="number"
+                    placeholder="extra price">
+                <select id="select_extra_type"></select>
+                <div class="add_extra_btns_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                    <button class="admin_Button" onclick="addExtraToMenue()">add extra</button>
+                </div>
+            </div>
+            <div class="delete_extra_block hide" id="delete_extra_block">
+                <div class="admin_esc_button_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                </div>
+                <select id="select_menue_to_delete_extra"></select>
+                <select id="select_extra_to_delete"></select>
+                <button class="admin_Button" onclick="deleteExtraFromMenue()">delete extra</button>
+            </div>
+
+            <!-- manage admins section -->
+
+            <div class="manage_admins_block hide" id="manage_admins_block">
+                <button class="admin_Button" onclick="toggleAddAdmin()">add admin</button>
+                <button class="admin_Button" onclick="toggleDeleteAdmin()">remove admin</button>
+                <div class="admin_esc_button_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                </div>
+            </div>
+            <div class="add_admin_block hide" id="add_admin_block">
+                <input id="new_user_name_input" class="new_user_name_input general_input" type="text"
+                    placeholder="user name">
+                <input id="new_email_input" class="new_email_input general_input" type="text" placeholder="email">
+                <input id="new_password_input" class="new_password_input general_input" type="text"
+                    placeholder="password">
+                <div class="add_admin_btns_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                    <button class="admin_Button" onclick="addAdmin()">add admin</button>
+                </div>
+            </div>
+            <div class="delete_admin_block hide" id="delete_admin_block">
+                <input id="delete_email_input" class="delete_email_input general_input" type="text" placeholder="email">
+                <input id="delete_password_input" class="delete_password_input general_input" type="text"
+                    placeholder="password">
+                <div class="delete_admin_btns_div">
+                    <button class="admin_Button" onclick="adminESC()">go back</button>
+                    <button class="admin_Button" onclick="deleteAdmin()">remove admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

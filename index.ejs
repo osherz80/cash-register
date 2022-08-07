@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AbWOR_JvWE5I2-MjIyHU855GPMSm_D3P0g_bLhfUovXJZ0gvS3JwmLX9L_RkLKLU5W037v8FyyJa0Fo-&currency=ILS"></script>
+
+    <!-- using public dir as the root -->
+    <script defer src="./js/cash_register.js"></script>
+    <script src="./js/adminMenuesToggling.js"></script>
+    <script src="./js/mainMenueBox.js"></script>
+    <script src="./js/menueItemBox.js"></script>
+    <script src="./js/extrasItemBox.js"></script>
+    <script src="./js/sumItemClass.js"></script>
+    <script src="./js/generalItemClass.js"></script>
+    <script src="./js/recordClass.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<link rel="stylesheet" href="./css/cash register.css">
+<link rel="stylesheet" href="./css/loadingScreen.css">
+
+<body>
+    <div class="loader_container" id="loader_container">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h2 class="loading">loading...</h2>
+    </div>
+    <div class="fluid hide" id="fluid">
+        <div class="bg_holder">
+        <div class="general_light_box light_box hide">
+            <div class="delete_order_div hide">
+                <label for="">are you sure you want to delete this order?</label>
+                <div class="delete_order_btns_container">
+                    <button class="confirm_delete_btn system_btn" onclick="confirmDeleteOrder('yes')">yes</button>
+                    <button class="confirm_delete_btn system_btn" onclick="confirmDeleteOrder('no')">no</button>
+                </div>
+            </div>
+            <div class="customer_add_name_div hide">
+                <label class="customer_label" for="customer name">customer name:</label>
+                <div class="customer_info_div">
+                    <input type="text" class="customer_name_input general_input">
+                    <button class="add_name_btn system_btn" onclick="addName()">OK</button>
+                </div>
+            </div>
+            <div class="finish_order_div hide" id="finish_order_div">
+                <div class="finish_order_div_header">
+                    <button class="close_payment_window_btn system_btn" onclick="closeAllPaymentsDivs()">🏠</button>
+                    <div class="convert_currencies_btns_div hide">
+                        <button class="convert_to_USD_btn currency_convertion_btn system_btn"
+                            onclick="convertToCurrency('USD')">&dollar;</button>
+                        <button class="convert_to_ILS_btn currency_convertion_btn system_btn"
+                            onclick="convertToCurrency('ILS')">&#8362;</button>
+                    </div>
+                </div>
+                <div class="payment_btns_container" id="payment_btns_container">
+                    <button class="pay_with_cash_menue_btn" id="pay_with_cash_menue_btn" onclick="openCashPayment()">pay
+                        with
+                        cash</button>
+                    <div class="paypal" id="paypal"></div>
+                </div>
+                <div class="cash_payment_div hide" id="cash_payment_div">
+                    <div class="cash_payment_header">
+                        <div class="cash_sum_div">
+                            <label for="sum display">sum to pay: </label>
+                            <div class="cash_sum_display">0</div>
+                            <div class="currency_to_recieve">&#8362;</div>
+                        </div>
+                        <div class="recived_cash_div">
+                            <label for="recived cash">total cash recived: </label>
+                            <div class="cash_received_info_div">
+                                <div class="total_ILS_recieved_div">&#8362; <span
+                                        class="total_ILS_recieved_display">0</span></div>
+                                <div class="total_USD_recieved_div">&dollar; <span
+                                        class="total_USD_recieved_display">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cash_payment_footer">
+                        <div class="cash_input_div">
+                            <label for="cash recived" class="recived_cash_label">cash recived:</label>
+                            <input type="number" class="cash_recived_input general_input"
+                                placeholder="$$$$$$$$$$$$$$$$$$$$$">
+                        </div>
+                        <div class="cash_warning_div">
+                            <p class="cash_warning_p"></p>
+                        </div>
+                        <button class="pay_cash_btn  system_btn" onclick="payCash()">pay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- admin section -->
+        <%- include('./server/my views/partials/adminMenues.ejs')%>
+            <div class="all_container " id="all_container">
+
+                <nav>
+                    <div class="customer_name_div" id="customer_name_div">
+                        <button class="customer_name_btn system_btn" id="customer_name_btn"
+                            onclick="openAddName(false)">customer name :</button>
+                        <div class="customer_name_container" id="customer_name_container"></div>
+                    </div>
+                    <button class="admin_entrance_btn system_btn" id="admin_entrance_btn"
+                        onclick="adminEntranceToggle()">Admin entrance</button>
+                </nav>
+                <main>
+
+                    <!---------------- order sum ---------------------->
+
+                    <div class="order_sum" id="order_sum">
+                        <div class="items" id="items"></div>
+                        <div class="topay">
+                            <div class="amout_to_pay">sum = <span id="sum_display">0</span></div>
+                            <div class="num_of_items">total items- <span id="total_items_display">0</span></div>
+                        </div>
+                    </div>
+
+                    <!---------------- dynamic menue -------------------------------- -->
+
+                    <div class="dynamic_menue" id="dynamic_menue">
+                        <div class="general_item_menue hide">
+                            <input type="text" class="general_item_input general_input" id="general_item_input"
+                                placeholder="description">
+                            <input type="number" class="general_item_price_input general_input"
+                                id="general_item_price_input" placeholder="price">
+                            <button class="add_general_item_btn system_btn" id="add_general_item_btn"
+                                onclick="addGeneralItem()">add general item</button>
+                        </div>
+                    </div>
+                    <div id="change_comment_light_box" class="change_comment_light_box hide">
+                        <div class="change_comment_div">
+                            <input type="text" id="change_comment_input" class="change_comment_input general_input">
+                            <button class="change_comment_btn system_btn" onclick="editComment()"> change
+                                comment</button>
+                            <button class="change_comment_btn system_btn" onclick="deleteComment()"> delete
+                                comment</button>
+                            <button class="system_btn" onclick="exitCommentEditing()">go back</button>
+                        </div>
+                    </div>
+
+                    <!---------------- main menue -------------------------------- -->
+
+                    <div class="main_menue" id="main_menue"></div>
+
+                </main>
+
+                <!---------------- footer  -------------------------------------- -->
+                
+                <footer>
+                    <div class="confirm_order_btn_div">
+                        <button class="confirm_order_btn system_btn" id="confirm_order_btn"
+                            onclick="openPaymentDiv()">confirm order</button>
+                    </div>
+                    <div class="delete_order_btn_div">
+                        <button class="delete_order_btn system_btn" onclick="openDeleteOrder()">cancel order</button>
+                    </div>
+                    <!-- <div class="delay_order_btn_div">
+                        <button class="delay_order_btn system_btn" onclick="delayOrder()">delay order</button>
+                    </div> -->
+                    <div class="general_item_btn_div">
+                        <button class="general_item_btn system_btn" onclick="openGeneralItemMenue()">general
+                            item</button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+</html>
